@@ -9,16 +9,16 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
-    function open_curtain()
-    {
-        $("#curtain1").animate({width:"4vw"},1000);
-        $("#curtain2").animate({width:"4vw"},1000);
-    }
-    function close_curtain()
-    {
-        $("#curtain1").animate({width:"47vw"},1000);
-        $("#curtain2").animate({width:"47vw"},1000);
-    }
+        function open_curtain()
+        {
+            $("#curtain1").animate({width:"4vw"},1000);
+            $("#curtain2").animate({width:"4vw"},1000);
+        }
+        function close_curtain()
+        {
+            $("#curtain1").animate({width:"47vw"},1000);
+            $("#curtain2").animate({width:"47vw"},1000);
+        }
     </script>
     </head>
     <style>
@@ -102,23 +102,24 @@
     </style>
     </head>
     <body>
-    <div id="wrapper">
-    <div id="effect">
-    <p>Surprise <br>You Got A Lottery!</p>
-    <img src="images/curtain1.jpg" id="curtain1">
-    <img src="images/curtain2.jpg" id="curtain2">
-    <br>
-    
-    <button id="hoverButton" onclick="open_curtain();">
-        Open
-    </button>
-    <!--
-    </div>
-        <div id="curtain_buttons">
-            <input type="button" value="OPEN CURTAIN" onclick="open_curtain();">
-            <input type="button" value="CLOSE CURTAIN" onclick="close_curtain();">
+        <div id="wrapper">
+            <div id="effect">
+                <div id="container"></div>
+                <p>Surprise <br>You Got A Lottery!</p>
+                <img src="images/curtain1.jpg" id="curtain1">
+                <img src="images/curtain2.jpg" id="curtain2">
+                <br>
+                
+                <button id="hoverButton" onclick="open_curtain();">
+                    Open
+                </button>
+            </div>
+        <!--
+            <div id="curtain_buttons">
+                <input type="button" value="OPEN CURTAIN" onclick="open_curtain();">
+                <input type="button" value="CLOSE CURTAIN" onclick="close_curtain();">
+            </div>
+        -->
         </div>
-    </div>
-    -->
     </body>
 </html>
