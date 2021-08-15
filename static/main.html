@@ -14,6 +14,7 @@
     {
         $("#curtain1").animate({width:"4vw"},1000);
         $("#curtain2").animate({width:"4vw"},1000);
+        $("#hoverButton").remove() ;
     }
     function close_curtain()
     {
@@ -25,11 +26,10 @@
     <style>
         #hoverButton {
             position: fixed;
-            opacity : 0.3;
-            left : 47vw;
-            top : 47vh;
-            height : 6vh;
-            width : 6vw;
+            left : 42vw;
+            top : 50vh;
+            width : 14vw;
+            /*opacity : 0.3;*/
         }
         body
         {
@@ -37,7 +37,7 @@
             width:100%;
             margin:0 auto;
             padding:0px;
-            background-color:#F79F81;
+            background-color:#0f0f0f;
         }
         #wrapper
         {
@@ -50,7 +50,7 @@
         h1
         {
             margin-top:50px;
-            color:#610B0B;
+            color:#ffffff;
             font-size:45px;
         }
         h1
@@ -95,9 +95,24 @@
             height:45px;
             border-radius:2px;
             color:white;
-            background-color:#161212;
+            background-color:#131212;
             border:none;
             border-bottom:6px solid #000000;
+        }
+        #container-1 {
+            position:fixed;
+            top:10vh;
+            left:10vw;
+        }
+        #container-2 {
+            position:fixed;
+            top:10vh;
+            left:11vw;
+        }
+        #container-3 {
+            position:fixed;
+            top:10vh;
+            left:12vw;
         }
     </style>
     </head>
@@ -105,12 +120,13 @@
         <div id="wrapper">
             <div id="effect">
                 <p>CSEA </p>
-                <div id="container"></div>
+                <div id="container-1"></div>
+                <div id="container-2"></div>
                 <img src="images/curtain1.jpg" id="curtain1">
                 <img src="images/curtain2.jpg" id="curtain2">
                 <br>
-                <button id="hoverButton" onclick="open_curtain();">
-                    Open
+                <button id="hoverButton" class="glow-on-hover" type="button" onclick="open_curtain();">
+                    OPEN
                 </button>
             </div>
         <!--
@@ -126,23 +142,75 @@
 <script type="module">
     import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
     
-    var animation = lottieWeb.loadAnimation({
-      container: document.getElementById('container'),
+    var i = 0 ;
+    var j = 0 ;
+    var k = 0 ;
+
+    function reposition(x) {
+        var container = document.getElementById('container-'+x);
+        console.log(container) ;
+    }
+
+    var animation_1 = lottieWeb.loadAnimation({
+      container: document.getElementById('container-1'),
       path: 'svg/62717-confetti.json',
       renderer: 'svg',
       loop: true,
       autoplay: false,
       name: "Confetti Animation",
     });
+
+    var animation_2 = lottieWeb.loadAnimation({
+      container: document.getElementById('container-2'),
+      path: 'svg/62717-confetti.json',
+      renderer: 'svg',
+      loop: true,
+      autoplay: false,
+      name: "Confetti Animation",
+    });
+
+    var animation_3 = lottieWeb.loadAnimation({
+    container: document.getElementById('container-2'),
+    path: 'svg/62717-confetti.json',
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    name: "Confetti Animation",
+    });
     
-    function startAnimation() {
-        console.log("Start Animation") ;
-        animation.play() ;
+    animation_1.addEventListener('loopComplete', (event) => {
+        console.log(i++); 
+        reposition(1) ;
+    })
+    animation_2.addEventListener('loopComplete', (event) => {
+        console.log(j++); 
+        reposition(2) ;
+    })
+    animation_3.addEventListener('loopComplete', (event) => {
+        console.log(k++); 
+        reposition(3) ;
+    })
+
+    function startAnimation_1() {
+        console.log("Start Animation 1") ;
+        animation_1.play() ;
     }
-    
+
+    function startAnimation_2() {
+        console.log("Start Animation 2") ;
+        animation_2.play() ;
+    }
+
+    function startAnimation_3() {
+        console.log("Start Animation 3") ;
+        animation_3.play() ;
+    }
+
     function play() {
       console.log("Play") ;
-      setTimeout(startAnimation,1000) ;
+      setTimeout(startAnimation_1,1000) ;
+      setTimeout(startAnimation_2,2000) ;
+      setTimeout(startAnimation_3,2000) ;
     }
     
     document.querySelector('button').addEventListener('click', play);
