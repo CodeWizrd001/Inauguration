@@ -6,11 +6,15 @@
   "author": "DragonPyli <codewizard001@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "lottie-web": "^5.7.13",
+    "node-sass": "^6.0.1",
     "node-static": "^0.7.11"
   },
   "scripts": {
-    "dev": "nodemon app.js" ,
-    "start" : "node app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "scss" : "node-sass --watch static/scss -o static/css",
+    "sc-confetti" : "node-sass static/scss/curtain.css -o static/css/curtain.css"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
