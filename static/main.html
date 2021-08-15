@@ -1,7 +1,33 @@
-<html>
-    <head>
-    </head>
-    <body>
-        Main
-    </body>
-</html>
+<div id="container"></div>
+<button> Play </button>
+
+<script type="module">
+import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
+
+var animation = lottieWeb.loadAnimation({
+  container: document.getElementById('container'),
+  path: 'svg/62717-confetti.json',
+  renderer: 'svg',
+  loop: true,
+  autoplay: false,
+  name: "Confetti Animation",
+});
+
+
+function play() {
+  console.log("Play") ;
+  animation.play() ;
+}
+
+document.querySelector('button').addEventListener('click', play);
+
+</script>
+
+<style>
+  button {
+    position : fixed ;
+    top : 50vh ;
+    left : 50vw ;
+    opacity : 0.1 ;
+  }
+</style>
