@@ -5,7 +5,7 @@ canvas.height = 1080;
 
 let ctx = canvas.getContext('2d');
 let pieces = [];
-let numberOfPieces = 50;
+let numberOfPieces = 100;
 let lastUpdateTime = Date.now();
 
 function randomColor () {
@@ -61,10 +61,10 @@ function draw () {
 function Piece (x, y) {
     this.x = x;
     this.y = y;
-    this.size = (Math.random() * 0.5 + 0.75) * 15;
-    this.gravity = (Math.random() * 0.5 + 0.75) * 0.1;
+    this.size = (Math.random() * 0.5 + 0.75) * 25;
+    this.gravity = (Math.random() * 0.5 + 0.75) * 0.2;
     this.rotation = (Math.PI * 2) * Math.random();
-    this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.001;
+    this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.01;
     this.color = randomColor();
 }
 
