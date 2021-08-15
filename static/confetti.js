@@ -64,7 +64,7 @@ function Piece (x, y) {
     this.size = (Math.random() * 0.5 + 0.75) * 25;
     this.gravity = (Math.random() * 0.5 + 0.75) * 0.2;
     this.rotation = (Math.PI * 2) * Math.random();
-    this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.01;
+    this.rotationSpeed = (Math.PI * 2) * (Math.random() - 0.5) * 0.002;
     this.color = randomColor();
 }
 
