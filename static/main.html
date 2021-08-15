@@ -59,12 +59,17 @@
         }
         #effect
         {
+            /*background-image:url("images/bg.png") ;*/
             background-color:#030303;
             position:relative;	
             width:94vw;
             height:95vh;
             margin: left 2vw;;
             box-shadow:0px 0px 10px 0px #000000;
+        }
+        img {
+            width: 94vw;
+            height: 95vh;
         }
         #effect
         {
@@ -106,12 +111,12 @@
         }
         #container-2 {
             position:fixed;
-            top:10vh;
-            left:11vw;
+            top:15vh;
+            left:50vw;
         }
         #container-3 {
             position:fixed;
-            top:10vh;
+            top:30vh;
             left:12vw;
         }
     </style>
@@ -119,9 +124,13 @@
     <body>
         <div id="wrapper">
             <div id="effect">
-                <p>CSEA </p>
+                <!--
+                    <p>CSEA </p>
+                -->
+                <img src="images/bg.png">
                 <div id="container-1"></div>
                 <div id="container-2"></div>
+                <div id="container-3"></div>
                 <img src="images/curtain1.jpg" id="curtain1">
                 <img src="images/curtain2.jpg" id="curtain2">
                 <br>
@@ -149,6 +158,12 @@
     function reposition(x) {
         var container = document.getElementById('container-'+x);
         console.log(container) ;
+        var newV = Math.floor(Math.random() * 15) - 1 ;
+        newV = newV + 'vw';
+        var newH = Math.floor(Math.random() * 80) + 0 ;
+        newH = newH + 'vh';
+        container.style.top = newV;
+        container.style.left = newH;
     }
 
     var animation_1 = lottieWeb.loadAnimation({
@@ -162,7 +177,7 @@
 
     var animation_2 = lottieWeb.loadAnimation({
       container: document.getElementById('container-2'),
-      path: 'svg/62717-confetti.json',
+      path: 'svg/55156-confetti.json',
       renderer: 'svg',
       loop: true,
       autoplay: false,
@@ -170,8 +185,8 @@
     });
 
     var animation_3 = lottieWeb.loadAnimation({
-    container: document.getElementById('container-2'),
-    path: 'svg/62717-confetti.json',
+    container: document.getElementById('container-3'),
+    path: 'svg/55156-confetti.json',
     renderer: 'svg',
     loop: true,
     autoplay: false,
@@ -208,9 +223,9 @@
 
     function play() {
       console.log("Play") ;
-      setTimeout(startAnimation_1,1000) ;
-      setTimeout(startAnimation_2,2000) ;
-      setTimeout(startAnimation_3,2000) ;
+      setTimeout(startAnimation_1,1600) ;
+      setTimeout(startAnimation_2,600) ;
+      setTimeout(startAnimation_3,2600) ;
     }
     
     document.querySelector('button').addEventListener('click', play);
