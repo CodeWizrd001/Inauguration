@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="includes/big_display_style.css">
     <link rel="stylesheet" type="text/css" href="includes/middle_display_style.css">
     <link rel="stylesheet" type="text/css" href="includes/small_display_style.css">
+    <link rel="stylesheet" type="text/css" href="css/neon.css">
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
@@ -36,7 +37,6 @@
             width:100%;
             margin:0 auto;
             padding:0px;
-            font-family:helvetica;
             background-color:#F79F81;
         }
         #wrapper
@@ -53,24 +53,24 @@
             color:#610B0B;
             font-size:45px;
         }
-        h1 p
+        h1
         {
             font-size:14px;
         }
         #effect
         {
-            background-color:#610B0B;
+            background-color:#030303;
             position:relative;	
             width:94vw;
             height:95vh;
             margin: left 2vw;;
-            box-shadow:0px 0px 10px 0px #610B0B;
+            box-shadow:0px 0px 10px 0px #000000;
         }
-        #effect p
+        #effect
         {
             margin-top:10px;
             font-size:30px;
-            color:#F79F81;
+            color:rgb(255, 255, 255);
         }
         #curtain1
         {
@@ -95,21 +95,20 @@
             height:45px;
             border-radius:2px;
             color:white;
-            background-color:#B43104;
+            background-color:#161212;
             border:none;
-            border-bottom:6px solid #8A2908;
+            border-bottom:6px solid #000000;
         }
     </style>
     </head>
     <body>
         <div id="wrapper">
             <div id="effect">
-                <p>Suuuup <br> [Add Image Here] </p>
+                <p>CSEA </p>
                 <div id="container"></div>
                 <img src="images/curtain1.jpg" id="curtain1">
                 <img src="images/curtain2.jpg" id="curtain2">
                 <br>
-                
                 <button id="hoverButton" onclick="open_curtain();">
                     Open
                 </button>
